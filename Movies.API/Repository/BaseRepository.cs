@@ -184,5 +184,22 @@ namespace Movies.API.Repository
                 throw;
             }
         }
+
+        /// <summary>
+        /// Saves changes
+        /// </summary>
+        /// <returns></returns>
+        public async Task SaveChangesAsync()
+        {
+            try
+            {
+                await _dbContext.SaveChangesAsync();
+            }
+            catch (Exception)
+            {
+                Rollback();
+                throw;
+            }
+        }
     }
 }

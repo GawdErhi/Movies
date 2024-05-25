@@ -16,8 +16,14 @@ namespace Movies.API.HelperModels
         [JsonProperty("Year")]
         public string Year { get; set; }
 
+        [JsonProperty("Rated")]
+        public string Rated { get; set; }
+
         [JsonProperty("Released")]
         public string Released { get; set; }
+
+        [JsonProperty("Runtime")]
+        public string Runtime { get; set; }
 
         [JsonProperty("Genre")]
         public string Genre { get; set; }

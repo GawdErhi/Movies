@@ -67,5 +67,11 @@ namespace Movies.API.Repository.Contracts
         /// <param name="lambda"></param>
         /// <returns></returns>
         Task<long> CountAsync();
+
+        /// <summary>
+        /// Saves changes
+        /// </summary>
+        /// <returns></returns>
+        Task SaveChangesAsync();
     }
 }
