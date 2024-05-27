@@ -9,9 +9,10 @@ export default function SearchBar(props){
     const history = useHistory();
 
     const fetchResult = (event) => {
-        console.log();
         let query = document.querySelector("#searchInput").value;
+        document.querySelector("#customLoader").style.display = "block";
         axios.get(`https://localhost:7052/Movies/search/${query}`).then(res => {
+            document.querySelector("#customLoader").style.display = "none";
             if(!res.data.data.response){
                 alert(res.data.data.error);
             }else{
@@ -19,10 +20,13 @@ export default function SearchBar(props){
                 document.querySelector("#movieTitleText").innerHTML = res.data.data.title;
                 document.querySelector("#movieRuntimeText").innerHTML = res.data.data.runtime;
                 document.querySelector("#searchContent").style.display = "block";
-
-                history.push(`/details?param1=${res.data.data.id}`);
+                targetPath = `/details?param1=${res.data.data.id}`;
             }
         });
+    }
+
+    const navigateToDetails = (event) => {
+        history.push(targetPath);
     }
 
     return (<div>
@@ -37,17 +41,18 @@ export default function SearchBar(props){
                         <button className="btn btn-outline-secondary" type="button" onClick={fetchResult}>search</button>
                     </div>
                 </div>
-                <span className="custom-loader"></span>
+                <span className="custom-loader" id="customLoader"></span>
                 </div>
                 <div className="search-content row" id="searchContent">
-                    <Link to={targetPath}>
                     <div className="col-1">
                     <img id="moviePosterImg" src="https://m.media-amazon.com/images/M/MV5BOGE4NzU1YTAtNzA3Mi00ZTA2LTg2YmYtMDJmMThiMjlkYjg2XkEyXkFqcGdeQXVyNTgzMDMzMTg@._V1_SX300.jpg"/>
                     </div>
                     <div className="col-10">
                         <p><span className="movie-title-text" id="movieTitleText">Thor the dark world</span><br/><span className="movie-runtime-text" id="movieRuntimeText">Runtime 115 mins</span></p>
                     </div>
-                    </Link>
+                    <div className="col-1">
+                        <button type="button" className="btn" onClick={navigateToDetails}>view</button>
+                    </div>
                 </div>
                 </div>
             </div>
