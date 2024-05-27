@@ -31,6 +31,7 @@ namespace Movies.API.Controllers
             }
         }
 
+        [HttpGet("details/{id}")]
         public async Task<IActionResult> Details(string id)
         {
             try

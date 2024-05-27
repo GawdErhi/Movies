@@ -49,7 +49,7 @@ namespace Movies.API.Services
             string responseContent = string.Empty;
             try
             {
-                var existingMovie = _movieDetailRepository.GetMovieByTitle(title);
+                var existingMovie = await _movieDetailRepository.GetMovieByTitle(title);
                 if(existingMovie != null) { return existingMovie; }
 
                 using(var omdbAPIClient = _httpClientFactory.CreateClient(OMDBAPIClientSettings.NAME))
