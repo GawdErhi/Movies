@@ -58,7 +58,7 @@ namespace Movies.API.Services
                     response.EnsureSuccessStatusCode();
                     responseContent = await response.Content.ReadAsStringAsync();
                     var responseObj = JsonConvert.DeserializeObject<OMDBAPIValidResponseModel>(responseContent);
-
+                    if (!responseObj.Response) { return JsonConvert.DeserializeObject<OMDBAPIInvalidResponseModel>(responseContent); }
                     //begin transaction
                     _movieDetailRepository.CreateTransaction();
 

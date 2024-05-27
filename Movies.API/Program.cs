@@ -40,6 +40,12 @@ namespace Movies.API
             builder.Services.TryAddScoped<IRatingRepository, RatingRepository>();
             builder.Services.TryAddScoped<IWriterRepository, WriterRepository>();
 
+            builder.Services.AddCors(options => options.AddDefaultPolicy(
+        builder =>
+        {
+            builder.AllowAnyOrigin() .AllowAnyHeader().AllowAnyMethod();
+        }));
+
             builder.Services.AddHttpClient(OMDBAPIClientSettings.NAME, client =>
             {
                 client.BaseAddress = new Uri(builder.Configuration.GetSection("OMDBAPIClient").GetValue<string>("BaseURL"));
@@ -63,6 +69,14 @@ namespace Movies.API
             // Configure the HTTP request pipeline.
 
             app.UseHttpsRedirection();
+
+            app.UseCors(builder =>
+            {
+                builder
+                .AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader();
+            });
 
             app.UseAuthorization();
 

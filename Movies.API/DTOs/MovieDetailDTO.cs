@@ -37,5 +37,7 @@
         public string Production { get; set; }
 
         public string Website { get; set; }
+
+        public bool Response { get; set; } = true;
     }
 }
