@@ -33,26 +33,26 @@ export default function MovieDetailSection(props){
         <div>
             <div className="row mx-0">
                 <div className="col-md-4">
-                    <img id="posterImgIdentifier" src="https://m.media-amazon.com/images/M/MV5BOGE4NzU1YTAtNzA3Mi00ZTA2LTg2YmYtMDJmMThiMjlkYjg2XkEyXkFqcGdeQXVyNTgzMDMzMTg@._V1_SX300.jpg" />
+                    <img id="posterImgIdentifier" src="" />
                 </div>
                 <div className="col-md-8">
                     <div className="row pt-4">
                     <div className="col-12">
                             <p className="movie-detail-title">Plot</p>
-                            <p className="movie-detail-content" id="plotIdentifier">The powerful but arrogant god Thor is cast out of Asgard to live amongst humans in Midgard (Earth), where he soon becomes one of their finest defenders.</p>
+                            <p className="movie-detail-content" id="plotIdentifier"></p>
                         </div>
                         <div className="row mx-0 px-0">
                             <div className="col-4">
                                 <p className="movie-detail-title">Title</p>
-                                <p className="movie-detail-content" id="titleIdentifier">Thor</p>
+                                <p className="movie-detail-content" id="titleIdentifier"></p>
                             </div>
                             <div className="col-4">
                                 <p className="movie-detail-title">Year</p>
-                                <p className="movie-detail-content" id="yearIdentifier">2011</p>
+                                <p className="movie-detail-content" id="yearIdentifier"></p>
                             </div>
                             <div className="col-4">
                                 <p className="movie-detail-title">Rated</p>
-                                <p className="movie-detail-content" id="ratedIdentifier">PG-13</p>
+                                <p className="movie-detail-content" id="ratedIdentifier"></p>
                             </div>
                         </div>
                         <div className="row mx-0 px-0">
@@ -72,15 +72,15 @@ export default function MovieDetailSection(props){
                         <div className="row mx-0 px-0">
                             <div className="col-4">
                                 <p className="movie-detail-title">IMDB Rating</p>
-                                <p className="movie-detail-content" id="imdbRatingIdentifier">7.0</p>
+                                <p className="movie-detail-content" id="imdbRatingIdentifier"></p>
                             </div>
                             <div className="col-4">
                                 <p className="movie-detail-title">Box Office</p>
-                                <p className="movie-detail-content" id="boxOfficeIdentifier">$181,030,624</p>
+                                <p className="movie-detail-content" id="boxOfficeIdentifier"></p>
                             </div>
                             <div className="col-4">
                                 <p className="movie-detail-title">Website</p>
-                                <p className="movie-detail-content" id="websiteIdentifier">N/A</p>
+                                <p className="movie-detail-content" id="websiteIdentifier"></p>
                             </div>
                         </div>
                     </div>
